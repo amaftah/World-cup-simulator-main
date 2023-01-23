@@ -50,14 +50,12 @@
         $CroatiaGoalsConceded = $morroccoFirstMatchScore + $canadaSecondMatchScore + $belgiumThirdMatchScore;
         $BelgiumGoalsConceded = $canadaFirstMatchScore + $morroccoSecondMatchScore + $croatiaThirdMatchScore;
         $CanadaGoalsConceded = $belgiumFirstMatchScore + $croatiaSecondMatchScore + $morroccoThirdMatchScore;
-        // the diffrence in goals
+
         $MoroccoGoalsDiffrence = $MoroccoGoals - $MoroccoGoalsConceded;
         $CroatiaGoalsDiffrence = $CroatiaGoals - $CroatiaGoalsConceded;
         $BelgiumGoalsDiffrence = $BelgiumGoals - $BelgiumGoalsConceded;
         $CanadaGoalsDiffrence = $CanadaGoals - $CanadaGoalsConceded;
 
-        // pointes clculation
-                // Morocco vs croitia
         if ($morroccoFirstMatchScore > $croatiaFirstMatchScore) {
             $moroccoPoints += 3;
             $MoroccoGameWins += 1;
@@ -72,7 +70,7 @@
             $MoroccoNullGames += 1;
             $CroatiaNullGames += 1;
         }
-            // Belgiumm vs canada
+
         if ($belgiumFirstMatchScore > $canadaFirstMatchScore) {
             $belgiumPoints += 3;
             $BelgiumGameWins += 1;
@@ -87,7 +85,7 @@
             $CanadaNullGames += 1;
             $BelgiumNullGames += 1;
         }
-            // Belgiumm vs Morocco
+
         if ($belgiumSecondMatchScore > $morroccoSecondMatchScore) {
             $belgiumPoints += 3;
             $BelgiumGameWins += 1;
@@ -102,7 +100,7 @@
             $BelgiumNullGames += 1;
             $MoroccoNullGames += 1;
         }
-            // Croatia vs Canada
+
         if ($croatiaSecondMatchScore > $canadaSecondMatchScore) {
             $croatiaPoints += 3;
             $CroatiaGameWins += 1;
@@ -117,7 +115,7 @@
             $CroatiaNullGames += 1;
             $CanadaNullGames += 1;
         }
-            // Croatia vs belgium
+
         if ($croatiaThirdMatchScore > $belgiumThirdMatchScore) {
             $croatiaPoints += 3;
             $CroatiaGameWins += 1;
@@ -132,7 +130,7 @@
             $CroatiaNullGames += 1;
             $BelgiumNullGames += 1;
         }
-            // Canada vs Morocco
+
         if ($canadaThirdMatchScore > $morroccoThirdMatchScore) {
             $canadaPoints += 3;
             $CanadaGameWins += 1;
@@ -147,7 +145,7 @@
             $MoroccoNullGames += 1;
             $CanadaNullGames += 1;
         }
-        // Sorting the Array
+
         function sortByValue($a, $b) {
             if($b['points'] == $a['points']) {
                     if($b['Goals'] == $a['Goals']) {
@@ -156,7 +154,7 @@
                 return $b['Goals'] - $a['Goals'];
             } 
             return $b['points'] - $a['points'];
-        }
+        3}
 
         $teams = array(
             array("country"=>"Morocco", "flag"=>$moroccoFlag, "points"=>$moroccoPoints, "Wins"=>$MoroccoGameWins, "Lost"=>$MoroccoLostGames, "Null"=>$MoroccoNullGames, "Goals"=>$MoroccoGoals, "GoalsConceded"=>$MoroccoGoalsConceded, "GoalsDiffrence"=>$MoroccoGoalsDiffrence),
