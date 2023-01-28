@@ -7,9 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-         <!-- php script -->
+
     <?php
-        // vars declaration 
         $croatiaPoints = $moroccoPoints = $belgiumPoints = $canadaPoints = 0;
 
         $morroccoFirstMatchScore = $_POST["morocco1"] ?? 0;
@@ -34,30 +33,26 @@
         $belgiumFlag = "./images/belgium.png";
         $canadaFlag = "./images/canada.jpg";
 
-        // Total Game wins, Lost and Null Matches: 
         $MoroccoGameWins = $MoroccoNullGames = $MoroccoLostGames =  0;
         $CroatiaGameWins = $CroatiaNullGames = $CroatiaLostGames = 0;
         $BelgiumGameWins = $BelgiumNullGames = $BelgiumLostGames =  0;
         $CanadaGameWins = $CanadaNullGames = $CanadaLostGames = 0;
 
-        // Number of Goals
         $MoroccoGoals = $morroccoFirstMatchScore + $morroccoSecondMatchScore + $morroccoThirdMatchScore;
         $CroatiaGoals = $croatiaFirstMatchScore + $croatiaSecondMatchScore + $croatiaThirdMatchScore;
         $BelgiumGoals = $belgiumFirstMatchScore + $belgiumSecondMatchScore + $belgiumThirdMatchScore;
         $CanadaGoals = $canadaFirstMatchScore + $canadaSecondMatchScore + $canadaThirdMatchScore;
-        // Goals conceded
+
         $MoroccoGoalsConceded = $croatiaFirstMatchScore + $belgiumSecondMatchScore + $canadaThirdMatchScore;
         $CroatiaGoalsConceded = $morroccoFirstMatchScore + $canadaSecondMatchScore + $belgiumThirdMatchScore;
         $BelgiumGoalsConceded = $canadaFirstMatchScore + $morroccoSecondMatchScore + $croatiaThirdMatchScore;
         $CanadaGoalsConceded = $belgiumFirstMatchScore + $croatiaSecondMatchScore + $morroccoThirdMatchScore;
-        // the diffrence in goals
+
         $MoroccoGoalsDiffrence = $MoroccoGoals - $MoroccoGoalsConceded;
         $CroatiaGoalsDiffrence = $CroatiaGoals - $CroatiaGoalsConceded;
         $BelgiumGoalsDiffrence = $BelgiumGoals - $BelgiumGoalsConceded;
         $CanadaGoalsDiffrence = $CanadaGoals - $CanadaGoalsConceded;
 
-        // pointes clculation
-                // Morocco vs croitia
         if ($morroccoFirstMatchScore > $croatiaFirstMatchScore) {
             $moroccoPoints += 3;
             $MoroccoGameWins += 1;
@@ -72,7 +67,7 @@
             $MoroccoNullGames += 1;
             $CroatiaNullGames += 1;
         }
-            // Belgiumm vs canada
+
         if ($belgiumFirstMatchScore > $canadaFirstMatchScore) {
             $belgiumPoints += 3;
             $BelgiumGameWins += 1;
@@ -87,7 +82,7 @@
             $CanadaNullGames += 1;
             $BelgiumNullGames += 1;
         }
-            // Belgiumm vs Morocco
+
         if ($belgiumSecondMatchScore > $morroccoSecondMatchScore) {
             $belgiumPoints += 3;
             $BelgiumGameWins += 1;
@@ -102,7 +97,7 @@
             $BelgiumNullGames += 1;
             $MoroccoNullGames += 1;
         }
-            // Croatia vs Canada
+
         if ($croatiaSecondMatchScore > $canadaSecondMatchScore) {
             $croatiaPoints += 3;
             $CroatiaGameWins += 1;
@@ -117,7 +112,7 @@
             $CroatiaNullGames += 1;
             $CanadaNullGames += 1;
         }
-            // Croatia vs belgium
+
         if ($croatiaThirdMatchScore > $belgiumThirdMatchScore) {
             $croatiaPoints += 3;
             $CroatiaGameWins += 1;
@@ -132,7 +127,7 @@
             $CroatiaNullGames += 1;
             $BelgiumNullGames += 1;
         }
-            // Canada vs Morocco
+
         if ($canadaThirdMatchScore > $morroccoThirdMatchScore) {
             $canadaPoints += 3;
             $CanadaGameWins += 1;
@@ -147,7 +142,7 @@
             $MoroccoNullGames += 1;
             $CanadaNullGames += 1;
         }
-        // Sorting the Array
+
         function sortByValue($a, $b) {
             if($b['points'] == $a['points']) {
                     if($b['Goals'] == $a['Goals']) {
@@ -336,7 +331,6 @@
                             </tr>
                         </thead>
                         <tbody style="background: #56042C; color: white;">
-                           <!-- displaying the html table from the sorted array "$teams"  -->
                             <?php
                                 for($row = 0; $row < count($teams); $row++) {
                                     echo "<tr>";
