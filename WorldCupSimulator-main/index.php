@@ -171,7 +171,7 @@
             <div class="container d-flex">
                 <div>
                     <a href="index.php">
-                        <img src="./images/logo.jpg" alt="Logo" width="50">
+                        <img src="./" alt="Logo" width="50">
                     </a>
                 </div>
                 <div class="align-self-center"> 
