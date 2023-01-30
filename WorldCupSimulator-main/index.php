@@ -7,12 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-<<<<<<< HEAD
 
-    <?php
-=======
+
+    
     <?php 
->>>>>>> d9f122f34b024a6c088de310fa153f03a461988c
         $croatiaPoints = $moroccoPoints = $belgiumPoints = $canadaPoints = 0;
 
         $morroccoFirstMatchScore = $_POST["morocco1"] ?? 0;
@@ -155,7 +153,7 @@
                 return $b['Goals'] - $a['Goals'];
             } 
             return $b['points'] - $a['points'];
-        3}
+        }
 
         $teams = array(
             array("country"=>"Morocco", "flag"=>$moroccoFlag, "points"=>$moroccoPoints, "Wins"=>$MoroccoGameWins, "Lost"=>$MoroccoLostGames, "Null"=>$MoroccoNullGames, "Goals"=>$MoroccoGoals, "GoalsConceded"=>$MoroccoGoalsConceded, "GoalsDiffrence"=>$MoroccoGoalsDiffrence),
